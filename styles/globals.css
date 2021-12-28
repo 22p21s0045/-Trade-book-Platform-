@@ -12,3 +12,8 @@
   padding-left: 30px;
   
 }
+.Box-Top{
+  display: flex;
+  flex-direction: row;
+  order: 5;
+}
