@@ -18,12 +18,24 @@
   grid-row-gap: 100px;
   padding-top: 50px;
   margin: 4rem;
-  margin-left: 200px;
-
-  
-  
+  margin-left: 200px;  
 }
-.Container-Top{
-  text-align: center;
-  
+@media screen and (max-width: 1260px) {
+  .Box-Top{
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 100px;
+    padding-top: 50px;
+    margin: 4rem;
+    margin-left: 100px;
+  }
 }
+@media screen and (max-width: 860px) {
+  .Box-Top{
+    grid-template-columns: 1fr;
+    grid-row-gap: 100px;
+    padding-top: 50px;
+    margin: 4rem;
+    margin-left: 100px;
+  }
+}
+  
