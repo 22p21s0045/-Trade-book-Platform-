@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 import { width } from "@mui/system";
 import axios from "axios";
 import { useQuery } from "react-query";
-
+import Grid from '@mui/material/Grid';
 function BoxTop() {
   let fetchdog = async () => {
     const { data } = await axios.get(
@@ -25,20 +25,20 @@ function BoxTop() {
   let hehe = array.map((item: string) => {
     return (
       
-        <Container >
-            
-          <Card sx={{ bgcolor: "#cfe8fc", height: "100px", width: "90px" }}>
-            <CardMedia>
-              <img src={item} height='100' width = '90' alt="dog" />
-            </CardMedia>
-          </Card>
-            
-        </Container>
+      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} item xs={12} sm={6} md={4}>
+      
+        <Card sx={{ bgcolor: "#cfe8fc", height: "300px", width: "200px" }}>
+          <CardMedia>
+            <img src={item} height="300" width="200" alt="dog" />
+          </CardMedia>
+        </Card>
+      
+      </Grid>
+      
       
     );
   });
-    return <div className = 'Box-Top'>{hehe}</div>;
-
+  return <div className="Box-Top">{hehe}</div>;
 }
 
 export default BoxTop;
