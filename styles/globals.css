@@ -1,28 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Pacifico&family=Praise&display=swap');
-.logo-Navbar{
-  font-family: 'Kodchasan', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Pacifico&family=Praise&display=swap");
+.logo-Navbar {
+  font-family: "Kodchasan", sans-serif;
 }
-.Search-Bar{
+.Search-Bar {
   padding-left: 100px;
 }
-.Avatar-Navbar{
+.Avatar-Navbar {
   padding-left: 50px;
 }
-.login-Button{
+.login-Button {
   padding-left: 30px;
-  
 }
-.Box-Top{
+.Box-Top {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 100px;
   padding-top: 50px;
   margin: 4rem;
-  margin-left: 200px;  
+  margin-left: 200px;
 }
 /* Responsive Grid Top Book Index */
 @media screen and (max-width: 1260px) {
-  .Box-Top{
+  .Box-Top {
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 100px;
     padding-top: 50px;
@@ -31,21 +30,26 @@
   }
 }
 @media screen and (max-width: 860px) {
-  .Box-Top{
+  .Box-Top {
     grid-template-columns: 1fr;
     grid-row-gap: 100px;
     padding-top: 50px;
     margin: 4rem;
     margin-left: 100px;
   }
+  .Sidebar {
+    display: grid;
+    top: 75px;
+    right: 10px;
+
+    position: absolute;
+    width: 500px;
+  }
 }
-.Sidebar{
+.Sidebar {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-row-gap: 100px;
-  padding-top: 50px;
-  margin: 4rem;
-  padding-right: 100px;
+  top: 75px;
+  left: 7px;
   position: absolute;
-  
+  width: 500px;
 }

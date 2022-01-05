@@ -4,7 +4,7 @@ import { FaBeer } from 'react-icons/fa';
 function Sidebar() {
     return (
         <div>
-            <ProSidebar>
+            <ProSidebar width = "180px">
   <Menu iconShape="square">
     <MenuItem icon={<FaBeer />}>Dashboard</MenuItem>
     <SubMenu title="Components" icon={<FaBeer />}>
