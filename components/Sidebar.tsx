@@ -1,21 +1,37 @@
 import React from 'react'
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import { FaBeer,FaHotjar } from 'react-icons/fa';
+import {FiArrowLeftCircle} from 'react-icons/fi';
+import {FiArrowRightCircle} from 'react-icons/fi';
 import { VscFeedback } from "react-icons/vsc";
 import { MdHistory } from "react-icons/md";
 import { GrAnnounce } from "react-icons/gr";
+import {BiCategory} from "react-icons/bi";
+import {BsBookmark} from "react-icons/bs";
 import { IconContext } from "react-icons";
 import { color } from '@mui/system';
-function Sidebar() {
+import {useState} from 'react'
+function Sidebar(prop:any) {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuonClick = () => {
+    isOpen ? setIsOpen(false) : setIsOpen(true);
+  }
     return (
         <div>
-            <ProSidebar width = "180px">
-  <Menu iconShape="square">
-  <SubMenu title="หมวดหมู่">
+            <ProSidebar width = "180px" collapsed = {isOpen}>
+              <div className="logo" onClick={menuonClick}>
+              {isOpen ?(
+                <FiArrowRightCircle/>
+              ) : (
+                <FiArrowLeftCircle/>
+              )}
+              </div>
+  <Menu iconShape="circle">
+  <SubMenu icon = {<BiCategory/>}title="หมวดหมู่">
       <MenuItem>จิตวิทยา</MenuItem>
       <MenuItem>ภาษา</MenuItem>
     </SubMenu>
-    <MenuItem icon={<FaBeer />}>โพสบันทึก</MenuItem>
+    <MenuItem icon={<BsBookmark />}>โพสบันทึก</MenuItem>
     <MenuItem icon = {<VscFeedback />}>ฟีดเเบค</MenuItem>
     <MenuItem  icon={<FaBeer />}>ประมูล</MenuItem>
     
@@ -24,10 +40,6 @@ function Sidebar() {
     <MenuItem icon = {<GrAnnounce />}>ประกาศ</MenuItem>
 
 
-    <SubMenu title="Components" icon={<FaBeer />}>
-      <MenuItem icon = {<VscFeedback />}>ฟีดเเบค</MenuItem>
-      <MenuItem>Component 2</MenuItem>
-    </SubMenu>
   </Menu>
 </ProSidebar>
         </div>
