@@ -5,12 +5,19 @@ import Card from "@mui/material/Card";
 import { width } from "@mui/system";
 import axios from "axios";
 import { useQuery } from "react-query";
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import CardContent from "@mui/material/CardContent";
+import Sidebar from "../components/Sidebar";
+import { useEffect } from "react";
+import Aos from "aos";
+
 function BoxTop() {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   let fetchdog = async () => {
-    const { data } = await axios.get(
-      "https://dog.ceo/api/breeds/image/random/6"
-    );
+    const { data } = await axios.get("http://localhost:1337/api/hotnows");
     return data;
   };
   fetchdog();
@@ -21,24 +28,33 @@ function BoxTop() {
   if (isLoading) {
     return <div>Loading</div>;
   }
-  let array: string[] = data.message;
-  let hehe = array.map((item: string) => {
+  let array: any[] = data.data;
+  let hehe = array.map((item: any) => {
     return (
-      
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} item xs={12} sm={6} md={4}>
-      
-        <Card sx={{ bgcolor: "#cfe8fc", height: "300px", width: "200px" }}>
-          <CardMedia>
-            <img src={item} height="300" width="200" alt="dog" />
-          </CardMedia>
-        </Card>
-      
-      </Grid>
-      
-      
+      <div data-aos="fade-up">
+      <Card sx={{ bgcolor: "#cfe8fc", height: "420px", width: "200px" }}>
+        <CardMedia>
+          <img src={item.attributes.image} height="300" width="200" alt="dog" />
+        </CardMedia>
+        <CardContent>
+          <Typography variant="h6" component="h2" color="#000">
+            {item.attributes.Name}
+          </Typography>
+        </CardContent>
+      </Card>
+      </div>
     );
   });
-  return <div className="Box-Top">{hehe}</div>;
+  return (
+    //TODO fix this error
+    <div className="Box-Top">{hehe}
+    <div className="Sidebar">
+    <Sidebar />
+    </div>
+    </div>
+    
+
+  )
 }
 
 export default BoxTop;
