@@ -8,6 +8,7 @@ import { MdHistory } from "react-icons/md";
 import { GrAnnounce } from "react-icons/gr";
 import {BiCategory} from "react-icons/bi";
 import {BsBookmark} from "react-icons/bs";
+import {RiAuctionLine} from "react-icons/ri";
 import { IconContext } from "react-icons";
 import { color } from '@mui/system';
 import {useState} from 'react'
@@ -33,7 +34,7 @@ function Sidebar(prop:any) {
     </SubMenu>
     <MenuItem icon={<BsBookmark />}>โพสบันทึก</MenuItem>
     <MenuItem icon = {<VscFeedback />}>ฟีดเเบค</MenuItem>
-    <MenuItem  icon={<FaBeer />}>ประมูล</MenuItem>
+    <MenuItem  icon={<RiAuctionLine />}>ประมูล</MenuItem>
     
     <MenuItem icon = {<FaHotjar />}>มาเเรง</MenuItem>
     <MenuItem icon = {<MdHistory/>}>ประวัติเเลก</MenuItem>
