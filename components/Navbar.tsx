@@ -1,5 +1,6 @@
 import React from "react";
-
+import Menu from "@mui/material/Menu";
+import { MenuList } from '@mui/material';
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -11,6 +12,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -89,13 +92,15 @@ export default function SearchAppBar() {
             </Search>
           </div>
           <div className="login-Button">
-
-          <Button variant="contained" color="success" >
-            Login
-          </Button>
+            <Button variant="contained" color="success">
+              Login
+            </Button>
           </div>
           <div className="Avatar-Navbar">
-            <Avatar />
+            <MenuItem>
+              <Avatar />
+              
+            </MenuItem>
           </div>
         </Toolbar>
       </AppBar>
